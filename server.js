@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const employeeRoute = require('./employee/employeeRoutes.js')
@@ -7,4 +8,4 @@ app.get('/',(req,res)=>{
 })
 app.use('/employee',employeeRoute)
 
-app.listen(4000,()=>{console.log('server running on 4000')})
+app.listen(process.env.PORT,()=>{console.log(`server running on ${process.env.PORT}`)})
