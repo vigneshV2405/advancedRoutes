@@ -7,7 +7,7 @@ function getAllemployees(req,res){
     Employee.find().then((resp)=>{
         res.send(resp)
     }).catch((err)=>{
-        res.send(`Something went wrong. ${JSON.stringify(err)}`)
+        console.log(err)
     })
 }
 function getEmployeebyId(req,res){
@@ -19,7 +19,7 @@ function getEmployeebyId(req,res){
             res.send('no match found')
         }
     }).catch((err)=>{
-        res.send(`Something went wrong. ${JSON.stringify(err)}`)
+        console.log(err)
     })
 }
 function addEmployee(req,res){
@@ -30,7 +30,7 @@ function postEmployee(req,res){
     newEmployee.save().then((resp)=>{
         res.redirect('/employee/getAll')
     }).catch((err)=>{
-        res.send(`error encountered. ${JSON.stringify(err)}`)
+        console.log(`error encountered. ${JSON.stringify(err)}`)
     })
 }
 
