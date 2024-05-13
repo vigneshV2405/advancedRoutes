@@ -15,4 +15,4 @@ app.get('/',(req,res)=>{
 })
 app.use('/employee',employeeRoute)
 
-app.listen(process.env.PORT,()=>{console.log(`server running on ${process.env.PORT}`)})
+app.listen(process.env.PORT || 3500,()=>{console.log(`server running on ${process.env.PORT}`)})
